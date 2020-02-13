@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+char n[11];
+
+int main()
+{
+    int tmp, N, i;
+    
+    scanf("%d", &N);
+    
+    for(i=0; i<N; i++)
+    {
+        scanf("%s %d", n,&tmp);
+        
+        if(tmp>=97)  printf("%s A+\n", n);
+        else if(tmp>=90)    printf("%s A\n", n);
+        else if(tmp>=87)    printf("%s B+\n", n);
+        else if(tmp>=80)    printf("%s B\n", n);
+        else if(tmp>=77)    printf("%s C+\n", n);
+        else if(tmp>=70)    printf("%s C\n", n);
+        else if(tmp>=67)    printf("%s D+\n", n);
+        else if(tmp>=60)    printf("%s D\n", n);
+        else if(tmp>=0)    printf("%s F\n", n);
+    }
+    
+    return 0;
+}
