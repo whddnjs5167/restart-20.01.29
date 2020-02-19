@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main()
+{
+    int d,n,s,p,i,t;
+    
+    scanf("%d", &t);
+    
+    for(i=0; i<t; i++)
+    {
+        scanf(" %d %d %d %d", &d, &n, &s, &p);
+        
+        if(d+n*p<n*s)   printf("parallelize\n");
+        else if(d+n*p>n*s)   printf("do not parallelize\n");
+        else    printf("does not matter\n");
+
+    }
+
+    return 0;
+}
