@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int a[100002];
+int s[100002];
+
+int main()
+{
+    int n,m,i,st,end,ans,j;
+    
+    scanf("%d", &n);
+    
+    for(i=1; i<n+1; i++)  scanf(" %d", &a[i]);
+    
+    for(i=1; i<n+1; i++)
+    {
+        s[i]=s[i-1]+a[i];
+    }
+    
+    scanf("%d", &m);
+    
+    for(i=0; i<m; i++)
+    {
+        ans=0;
+         
+        scanf(" %d %d", &st, &end);
+        
+        ans=s[end]-s[st-1];
+        
+        printf("%d\n", ans);
+    }
+    
+    return 0;
+}
