@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+
+char sen[101];
+int cnt[26];
+
+int main()
+{
+    int i,j;
+    
+    scanf("%s", sen);
+    
+    for(i=0; i<26; i++) cnt[i]--;
+    
+    for(i=0; i<strlen(sen); i++)
+    {
+        for(j=0; j<26; j++)
+            if(sen[i]==97+j)
+            {
+                if(cnt[j]<0)
+                {
+                    cnt[j]=i;
+                    break;
+                }
+                else break;
+            }
+    }
+    
+    for(i=0; i<26; i++) printf("%d ",cnt[i]);
+
+    return 0;
+}
