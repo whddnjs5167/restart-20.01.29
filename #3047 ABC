@@ -1,0 +1,44 @@
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+char strinp[3];
+int numinp[3];
+struct Box{
+    int num[1];
+    char alp[1];
+};
+
+int main()
+{ 
+    int i,j;
+
+    struct Box a[3];
+    
+    for(i=0; i<3; i++)  scanf(" %d", &numinp[i]);
+    
+    sort(numinp, numinp+3);
+    
+    scanf("%s", strinp);
+    
+    for(i=0; i<3; i++)
+    {
+        a[i].num[0]=numinp[i];
+        a[i].alp[0]=65+i;
+    }
+
+    for(i=0; i<3; i++)
+    {
+        for(j=0; j<3; j++)
+        {
+            if(strinp[i]==a[j].alp[0])
+            {
+                printf("%d ", a[j].num[0]);
+                break;
+            }
+        }
+    }
+
+    return 0;
+}
